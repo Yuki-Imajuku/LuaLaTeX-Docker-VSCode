@@ -1,0 +1,67 @@
+\documentclass[a4paper,10pt]{ltjsarticle}
+
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{xurl}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{tocloft}
+
+\renewcommand{\cftsecfont}{\sffamily}
+\renewcommand{\cftsubsecfont}{\sffamily}
+\renewcommand{\cftsecpagefont}{\sffamily}
+\renewcommand{\cftsubsecpagefont}{\sffamily}
+\newcommand*\diff[1]{\mathop{}\!\mathrm{d}#1}
+
+\hypersetup{setpagesize=false, bookmarksnumbered=true, bookmarksopen=true, colorlinks=true, linkcolor=black, citecolor=red, urlcolor=blue}
+
+\title{Lua\LaTeX を Docker と VSCode で使おう！}
+\author{にゃ〜ん}
+\date{2020/02/02}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\setcounter{page}{1}
+\section{本文}
+ね、簡単でしょ？
+
+\section{数式}
+\begin{align*}
+\int \diff{\bm{x}}
+\end{align*}
+
+\section{特殊文字}
+\copyright
+\textyen
+\textregistered
+
+\section{表}
+表\ref{table:table1}を見ると一目瞭然！
+
+\begin{table}[tb]
+\caption{Dockerを使えると、嬉しい}\label{table:table1}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}XXX@{}} \toprule
+なんか & 良さげな & 結果 \\ \midrule
+ローカル環境~\cite{local} & 汚れる & めんどくさい \\
+Docker~\cite{docker} & コンテナだけ & 便利 \\\bottomrule
+\end{tabularx}
+\end{center}
+\end{table}
+
+\section{その他}
+またオレ何かやっちゃいました？\footnote{\url{https://very-very.long.longlong.loooooooooooooooong.url.com/hoge/fuga/nyan?query=key-val-items&query_id=123456789}}
+
+\addcontentsline{toc}{section}{参考文献}
+\bibliographystyle{ieeetr}
+\bibliography{list.bib}
+
+\end{document}

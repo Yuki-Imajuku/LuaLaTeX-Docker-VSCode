@@ -1,0 +1,36 @@
+{
+    "latex-workshop.docker.enabled": true,
+    "latex-workshop.docker.image.latex": "paperist/texlive-ja:latest",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "lualatex -> bibtex -> lualatex*2",
+            "tools": [
+                "lualatex",
+                "pbibtex",
+                "lualatex",
+                "lualatex",
+            ]
+        },
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+        },
+        {
+            "name": "pbibtex",
+            "command": "pbibtex",
+            "args": [
+                "%DOC%"
+            ]
+        },
+    ],
+}
